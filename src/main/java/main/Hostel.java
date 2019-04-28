@@ -41,10 +41,10 @@ public class Hostel{
 
 	               while ((line = br.readLine()) != null) {
 		               String[] splited = line.split("\\s+");
-		               String checkName = splited[0];
+		               String checkName = name;
 		               //write your code here !!!
 //		               compare check name with name and return true if present and false if not
-	                    if(checkName.equals(name) ){
+	                    if(splited[0].equals(name) ){
 	                        return true;
 	                    }
 	                   
@@ -54,14 +54,15 @@ public class Hostel{
 	            }catch(Exception e){
 	                System.out.println(e);
 	            }
-			return true;
+			return false;
 	   }
        public static void allotHostel(){
     	   //write your code here!!!
      	   try {
 			writedata();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			// TODO Auto-generated catch block\
+			System.out.println(e);
 			e.printStackTrace();
 		}
     	   
@@ -90,10 +91,7 @@ public class Hostel{
     	   
    
                  
-             	 if( readData(name));
-             	 {
-             		 chk=true;
-             	 }
+             	 chk= readData(name);
          
              
              
